@@ -7,21 +7,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>How's Mars?</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="jumbotron text-center">
             <h1>Mars is SO COOL!!</h1>
-            <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">find up-to-date info on the red planet!</a></p>
         </div>
-        <img src="{{ vacation.sloth_img }}" alt="Sloth">
-        <h2>The typical weather in Costa Rica is:</h2>
-        <h3>Max Temp: {{ vacation.max_temp }}</h3>
-        <h3>Min Temp: {{ vacation.min_temp }}</h3>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class=" col-12 post">
+                <h2>Latest mars news</h2>
+                <h3>{{ data_dict.headline }}</h3>
+                <p>{{ data_dict.intro }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-8">
+                <h2>Latest image of Mars:</h2>
+                <img src='{{ data_dict.image }}'>
+            </div>
+            <div class="col-4">
+                <div>
+                    <h2>Mars Facts!</h2>
+                    {{ data_dict.data_table|safe }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-12">
+                <h2>Perspectives of Mars:</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for hemi in data_dict.image_urls_dict %}
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ hemi.img_url }} " class="card-img-top" alt="{{ hemi.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ hemi.title }}</h5>
+                        <a href="{{ hemi.href }}" class="btn btn-primary">full size</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
 </body>
 
 </html>

@@ -1,0 +1,145 @@
+/* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
+
+body {
+    background: #888888;
+}
+
+h1 {
+    font-size: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+/* Styling the header, giving it a height, a background color, and some top padding */
+
+.header {
+    height: 200px;
+    padding-top: 20px;
+    background: #cdcdcd;
+}
+
+
+/* Centering our h1 tag inside our header, giving it a little padding, removing its margin */
+
+.header h1 {
+    padding: 60px;
+    margin: 0;
+    color: #000;
+    text-align: center;
+}
+
+.btn.btn-secondary {
+    visibility: hidden;
+}
+
+.post {
+    margin-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-width: 10px;
+    border-color: #888888;
+    border-style: solid;
+    background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        visibility: hidden
+    }
+    .btn.btn-secondary {
+        visibility: visible;
+        position: fixed;
+        top: 2px;
+        margin-left: 80%;
+        "
+
+    }
+    .navbar li {
+        color: #000;
+        padding: 2px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+    .post {
+        margin-top: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-width: 5px;
+        border-color: #000;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    img {
+        width: 256px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+}
+
+.left {
+    float: left;
+    padding: 0 20px 0 0;
+}
+
+.thumbnail {
+    width: 128px;
+}
+
+.selected {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #000;
+    border-radius: 10px;
+}
+
+.nav-tabs {
+    background-color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border: none;
+}
+
+td,
+th {
+    border-right: 0px;
+    border-left: 0px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F0F0F0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #C0C0C0;
+}
+
+button {
+    position: fixed;
+    top: 2px;
+    left: 2px;
+}
